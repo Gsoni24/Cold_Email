@@ -6,7 +6,7 @@ from utils import clean_text
 
 
 def create_streamlit_app(llm, clean_text):
-    st.title("📧 Cold Mail Generator")
+    st.title("Cold Mail Generator")
     url_input = st.text_input("Enter a URL:", placeholder="Enter Here")
     submit_button = st.button("Submit")
 
@@ -25,4 +25,5 @@ def create_streamlit_app(llm, clean_text):
 if __name__ == "__main__":
     chain = Chain()
     st.set_page_config(layout="wide", page_title="Cold Email Generator", page_icon="📧")
+
     create_streamlit_app(chain, clean_text)
