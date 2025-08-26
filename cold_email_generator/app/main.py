@@ -25,9 +25,10 @@ def create_streamlit_app(llm, clean_text):
 
 if __name__ == "__main__":
     api_key = os.getenv("GROQ_API_KEY")
-    chain = Chain()
+    chain = Chain(api_key)
     st.set_page_config(layout="wide", page_title="Cold Email Generator", page_icon="📧")
 
     create_streamlit_app(chain, clean_text)
+
 
 
