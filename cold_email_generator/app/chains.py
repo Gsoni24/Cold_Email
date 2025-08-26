@@ -8,21 +8,15 @@ from dotenv import load_dotenv
 load_dotenv()
 
 class Chain:
-    def __init__(self):
-        # if not os.environ.get("GROQ_API_KEY"):
-        #     os.environ["GROQ_API_KEY"] = os.getenv("GROQ_API_KEY")
-
-        # self.llm = init_chat_model("llama-3.3-70b-versatile", model_provider="groq")
-        api_key = os.getenv("GROQ_API_KEY")
+    def __init__(self, api_key: str):
         if not api_key:
-            raise EnvironmentError("GROQ_API_KEY is not set.")
-
+            raise ValueError("GROQ_API_KEY is missing.")
+        
         self.llm = init_chat_model(
             model="llama-3.3-70b-versatile",
             model_provider="groq",
             api_key=api_key
         )
-
     def extract_jobs(self, cleared_text):
         prompt_extract = PromptTemplate.from_template(
             """
@@ -71,4 +65,5 @@ class Chain:
         chain_email = prompt_email | self.llm
         res_email = chain_email.invoke({'job_description': str(job)})
         return res_email.content
+
 
