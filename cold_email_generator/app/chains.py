@@ -40,6 +40,7 @@ class Chain:
             raise OutputParserException("Content is loo big . Unable to extract job posting")
         return res if isinstance(res, list) else [res]
 
+    # Change the INSTRUCTION prompt according to your personal details.
     def write_mail(self, job):
         prompt_email = PromptTemplate.from_template(
             """
@@ -65,5 +66,6 @@ class Chain:
         chain_email = prompt_email | self.llm
         res_email = chain_email.invoke({'job_description': str(job)})
         return res_email.content
+
 
 
