@@ -1,3 +1,4 @@
+import os
 import streamlit as st
 from langchain_community.document_loaders import WebBaseLoader
 
@@ -28,4 +29,5 @@ if __name__ == "__main__":
     st.set_page_config(layout="wide", page_title="Cold Email Generator", page_icon="📧")
 
     create_streamlit_app(chain, clean_text)
+
 
