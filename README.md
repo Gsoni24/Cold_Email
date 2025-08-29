@@ -89,4 +89,7 @@ Gaurav Soni
 - 📧 [Gmail](gauravsoni242001@gmail.com)
 - 🔗 [LinkedIn](www.linkedin.com/in/gaurav-soni-75488a311)
 
+## Acknowledgements
 
+This project was inspired by [Codebasics - GenAI Cold Email Generator](https://github.com/codebasics/project-genai-cold-email-generator).  
+Special thanks to the open-source community for providing resources and ideas that made this project possible.
