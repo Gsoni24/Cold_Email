@@ -48,16 +48,8 @@ class Chain:
             {job_description}
 
             ### INSTRUCTION:
-            You are Gaurav Soni a recent graduate with a strong passion for Artificial Intelligence, Machine Learning, and Data Science. /
-            You have hands-on experience through internships at Unified Mentor and Byte Uprise, where you worked on projects such as /
-            COVID-19 data analysis, customer satisfaction prediction, Netflix data analysis, and movie prediction systems using Python, Pandas, NumPy, Scikit-learn, and visualization tools. /
-            You have also developed a movie recommendation system website with Streamlit. /
-            Your technical skills include Python, SQL, ML/DL, Computer Vision, and web technologies, supported by certifications in Generative AI (AWS), LLM Applications with Prompt Engineering (NVIDIA), and Emerging Technologies (SAP & Edunet Foundation). \
-            With leadership experience in team projects and presentations, you aim to start your career as a Data Scientist or AI Engineer, /
-            focusing on building impactful AI solutions, particularly in the field of Generative AI.
-            Your job is to write a cold email to the hiring manager/team/person regarding the job mentioned above describing your capability to /
-            in fulfiling their needs.
-            Remember you are Gaurav Soni
+            IMPORTANT : Enter prompt describing your information about yourself what is your job role and the industry you are targeting.
+            
             Do not provide a preamble.
             ### EMAIL (NO PREAMBLE)
             """
@@ -66,6 +58,7 @@ class Chain:
         chain_email = prompt_email | self.llm
         res_email = chain_email.invoke({'job_description': str(job)})
         return res_email.content
+
 
 
 
